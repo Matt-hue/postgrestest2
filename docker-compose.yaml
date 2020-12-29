@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  db:
+    image: postgres2
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: Pazzwor7676
+  app:
+    build: .
+    ports:
+      - 8000:80
+    depends_on:
+      - db
