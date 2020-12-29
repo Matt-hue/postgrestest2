@@ -5,8 +5,7 @@ services:
     image: postgres
     restart: always
     environment:
-    - POSTGRES_PASSWORD:pahzzwor7676
-    - POSTGRES_DB:MyAnimalDb
+      POSTGRES_PASSWORD: pahzzwor7676
 #    - POSTGRES_USER:mattUser
   app:
     build: .
