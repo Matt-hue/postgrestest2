@@ -5,7 +5,9 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: Pazzwor7676
+    - POSTGRES_PASSWORD:pahzzwor7676
+    - POSTGRES_DB:MyAnimalDb
+    - POSTGRES_USER:mattUser
   app:
     build: .
     ports:
