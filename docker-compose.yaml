@@ -1,17 +1,15 @@
 version: "3.3"
 
 services:
-  db:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: pahzzwor7676
-#    - POSTGRES_USER:mattUser
-    ports:
-      - "5432:5432"
+  #db:
+   # image: postgres
+    #restart: always
+    #environment:
+     # POSTGRES_PASSWORD: pahzzwor7676
+    #ports:
+     # - "5432:5432"
   app:
     build: .
-#    user: mattUser
     ports:
       - 8000:80
     depends_on:
