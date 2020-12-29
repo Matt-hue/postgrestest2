@@ -10,7 +10,10 @@ services:
     - POSTGRES_USER:mattUser
   app:
     build: .
+    user: mattUser
     ports:
       - 8000:80
     depends_on:
       - db
+    environment:
+    - POSTGRES_PASSWORD:pahzzwor7676
