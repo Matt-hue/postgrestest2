@@ -11,7 +11,7 @@ services:
   app:
     build: .
     ports:
-      - 8081:81
+      - 8081:80
     #depends_on:
      # - db
     environment:
@@ -19,7 +19,7 @@ services:
   webserver:
     image: nginx
     ports:
-      - "8081:81"
+      - "8081:80"
     environment:
       - NGINX_HOST=foobar.com
       - NGINX_PORT=81
