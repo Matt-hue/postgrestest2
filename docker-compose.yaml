@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   db:
-    image: postgres2
+    image: postgres
     restart: always
     environment:
       POSTGRES_PASSWORD: Pazzwor7676
