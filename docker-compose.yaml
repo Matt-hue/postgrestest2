@@ -12,8 +12,8 @@ services:
     build: .
     ports:
       - 8000:80
-    depends_on:
-      - nginx
+    #depends_on:
+     # - db
     environment:
     - POSTGRES_PASSWORD:pahzzwor7676
   webserver:
