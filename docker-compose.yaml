@@ -10,8 +10,8 @@ services:
      # - "5432:5432"
   app:
     build: .
-    ports:
-      - 8082:80
+    #ports:
+    #  - 8082:80
     #depends_on:
      # - db
     environment:
@@ -23,3 +23,5 @@ services:
     environment:
       - NGINX_HOST=foobar.com
       - NGINX_PORT=81
+    depends_on:
+      app:
