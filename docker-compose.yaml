@@ -7,6 +7,8 @@ services:
     environment:
       POSTGRES_PASSWORD: pahzzwor7676
 #    - POSTGRES_USER:mattUser
+    ports:
+      - "5432:5432"
   app:
     build: .
 #    user: mattUser
