@@ -13,6 +13,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Npgsql.EntityFrameworkCore;
 using Npgsql;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace postgrestest2
 {
@@ -35,6 +36,12 @@ namespace postgrestest2
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseForwardedHeaders(
+                new ForwardedHeadersOptions 
+                {
+                    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto 
+                });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

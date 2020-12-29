@@ -18,3 +18,10 @@ services:
       - db
     environment:
     - POSTGRES_PASSWORD:pahzzwor7676
+  webserver:
+    image: nginx
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_HOST=foobar.com
+      - NGINX_PORT=80U
