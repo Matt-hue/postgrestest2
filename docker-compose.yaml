@@ -13,7 +13,7 @@ services:
     ports:
       - 8000:80
     depends_on:
-      - db
+      - nginx
     environment:
     - POSTGRES_PASSWORD:pahzzwor7676
   webserver:
