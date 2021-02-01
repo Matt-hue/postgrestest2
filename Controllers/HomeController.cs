@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using postgrestest2.Models;
+using postgrestest2.Models.Home;
 
 namespace postgrestest2.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AnimalContext _context;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -20,7 +22,14 @@ namespace postgrestest2.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<Animal> animals = _context.Animals.ToList();
+            return View(new IndexViewModel(animals));
+        }
+        [HttpPost]
+        public IActionResult Index(string Name, int Heigth)
+        {
+            _context.Animals.Add(new Animal(Name, Heigth));
+            return RedirectToAction();
         }
 
         public IActionResult Privacy()
